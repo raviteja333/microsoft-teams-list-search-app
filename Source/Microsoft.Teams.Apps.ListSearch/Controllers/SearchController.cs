@@ -144,7 +144,7 @@ namespace Microsoft.Teams.Apps.ListSearch.Controllers
                 Question = question,
                 Answers = answers,
                 ListItemId = id,
-                SharePointListUrl = this.Session["SharePointUrl"].ToString(),
+                SharePointListUrl = this.Session["SharePointUrl"]!=null? this.Session["SharePointUrl"].ToString():"https://m365x067565.sharepoint.com/_layouts/15/sharepoint.aspx",
             };
 
             return this.PartialView(selectedSearchResult);
